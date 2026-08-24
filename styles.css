@@ -1,0 +1,66 @@
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#f2f0eb;color:#111;font-family:Georgia,"Times New Roman",serif}
+a{color:inherit}
+.site-header{height:78px;position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;padding:10px 5vw;background:rgba(242,240,235,.96);border-bottom:1px solid #d2cec4}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;font-family:Arial,sans-serif;font-size:12px;font-weight:800;letter-spacing:1.7px;line-height:1.05}
+.brand img{width:49px;height:49px;object-fit:contain}
+.nav{display:flex;gap:30px;font-family:Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase}
+.nav a{text-decoration:none}.nav a:hover{opacity:.55}
+.menu-toggle{display:none;border:0;background:none;font-size:25px}
+.hero{min-height:calc(100vh - 78px);position:relative;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;padding:7vw 8vw;overflow:hidden;background:#dedbd3}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(242,240,235,.98) 0%,rgba(242,240,235,.88) 48%,rgba(222,219,211,.35) 100%)}
+.hero-content,.hero-emblem{position:relative;z-index:1}
+.eyebrow,.section-kicker{font-family:Arial,sans-serif;font-size:10px;font-weight:800;letter-spacing:3px}
+.hero h1{font-size:clamp(62px,9.4vw,130px);line-height:.79;letter-spacing:-5px;text-transform:uppercase;margin:22px 0 32px}
+.hero h1 span{font-style:italic;font-weight:400}
+.hero-lead{max-width:570px;font-size:20px;line-height:1.65;margin:0}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+.button{display:inline-block;padding:15px 22px;border:1px solid #111;text-decoration:none;font-family:Arial,sans-serif;font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase}
+.primary{background:#111;color:#fff}.outline{background:transparent;color:#111}
+.hero-emblem{display:flex;justify-content:center;align-items:center}
+.hero-emblem img{width:min(90%,550px);filter:drop-shadow(0 22px 25px rgba(0,0,0,.14))}
+.emblem-frame{position:absolute;width:78%;aspect-ratio:1;border:1px solid #aaa59b;border-radius:50%}
+.scroll-cue{position:absolute;z-index:2;bottom:28px;left:8vw;font:800 9px Arial,sans-serif;letter-spacing:2px}
+.principles{display:grid;grid-template-columns:repeat(3,1fr);background:#111;color:#fff}
+.principles div{padding:24px 8vw;border-right:1px solid #333;display:flex;gap:18px;align-items:center}
+.principles strong{font:10px Arial,sans-serif;opacity:.45}.principles span{font-size:20px}
+.section{padding:105px 8vw}
+.section-title-row{display:grid;grid-template-columns:1fr 1fr;gap:8vw;align-items:end;margin-top:18px}
+.section h2,.membership h2,.shop h2,.contact h2{font-size:clamp(48px,6.5vw,88px);line-height:.88;letter-spacing:-4px;text-transform:uppercase;margin:0}
+.section h2 em,.contact h2 em{font-weight:400}
+.section-title-row p{font-size:20px;line-height:1.7;max-width:620px;margin:0}
+.text-link{display:inline-block;margin-top:45px;font:800 11px Arial,sans-serif;text-transform:uppercase;letter-spacing:1.5px}
+.membership{padding:105px 8vw;background:#151515;color:#fff}
+.membership-head{display:grid;grid-template-columns:1fr 1fr;gap:8vw;margin:22px 0 60px}
+.membership-head p{font-size:19px;line-height:1.7;max-width:580px}
+.membership-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-bottom:45px}
+.membership-grid article{padding:38px;background:#222;min-height:260px}
+.membership-grid span,.service-grid span{font:10px Arial,sans-serif;letter-spacing:2px;opacity:.55}
+.membership-grid h3{font-size:33px;margin:58px 0 12px}.membership-grid p{font:15px Arial,sans-serif;line-height:1.7;color:#ccc}
+.light-button{color:#fff;border-color:#fff}
+.services h2{margin:18px 0 55px}
+.service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.service-grid article{border-top:2px solid #111;padding-top:18px}
+.service-grid h3{font-size:31px;margin:45px 0 12px}.service-grid p{font:15px Arial,sans-serif;line-height:1.75;min-height:75px}.service-grid a{font:800 10px Arial,sans-serif;text-transform:uppercase;letter-spacing:1px}
+.shop{display:grid;grid-template-columns:1fr 1fr;min-height:650px;background:#d5d1c8}
+.shop-art{display:flex;justify-content:center;align-items:center;background:#111;overflow:hidden}
+.shop-art img{width:65%;filter:invert(1);opacity:.88}
+.shop-copy{padding:9vw 8vw;display:flex;flex-direction:column;align-items:flex-start;justify-content:center}
+.shop-copy h2{margin:18px 0 25px}.shop-copy p{font-size:19px;line-height:1.7;max-width:520px;margin-bottom:30px}
+.contact{background:#ebe8e1}.contact-layout{display:grid;grid-template-columns:1fr 1fr;gap:8vw;margin-top:22px}.contact h2{margin-bottom:28px}.contact-layout>div p{font-size:19px;line-height:1.7;max-width:550px}
+form{display:grid;gap:15px;font:700 10px Arial,sans-serif;text-transform:uppercase;letter-spacing:1px}
+label input,label textarea{display:block;width:100%;margin-top:8px;padding:14px;border:1px solid #aaa;background:#f5f3ee;font:15px Arial,sans-serif;letter-spacing:0;text-transform:none}
+form .button{width:max-content}small{font:11px Arial,sans-serif;opacity:.55;text-transform:none;letter-spacing:0}
+footer{display:flex;align-items:center;gap:14px;padding:28px 8vw;background:#111;color:#fff;font:11px Arial,sans-serif;letter-spacing:.3px}
+footer img{width:46px;height:46px;object-fit:contain;filter:invert(1)}
+footer p{margin-left:auto;opacity:.5}
+@media(max-width:800px){
+ .site-header{height:70px}.nav{display:none}.menu-toggle{display:block}.nav.open{display:flex;position:absolute;top:70px;left:0;right:0;background:#f2f0eb;padding:20px 7vw;flex-direction:column;gap:20px;border-bottom:1px solid #d2cec4}
+ .hero{min-height:calc(100vh - 70px);grid-template-columns:1fr;padding:70px 7vw 95px}.hero h1{font-size:clamp(55px,16vw,90px);letter-spacing:-4px}.hero-lead{font-size:18px}.hero-emblem{margin-top:55px}.hero-emblem img{width:82%}.scroll-cue{left:7vw}
+ .principles{grid-template-columns:1fr}.principles div{padding:20px 7vw;border-right:0;border-bottom:1px solid #333}
+ .section,.membership{padding:75px 7vw}.section-title-row,.membership-head,.contact-layout{grid-template-columns:1fr;gap:30px}.section-title-row p,.membership-head p{font-size:18px}
+ .membership-grid,.service-grid{grid-template-columns:1fr}.membership-grid article{min-height:220px}.membership-grid h3{margin-top:38px}
+ .shop{grid-template-columns:1fr}.shop-art{min-height:390px}.shop-copy{padding:75px 7vw}.shop h2,.contact h2{font-size:54px}
+ footer{flex-wrap:wrap;padding:25px 7vw}footer p{width:100%;margin:4px 0 0}
+}
