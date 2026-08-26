@@ -1,42 +1,39 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-  const header = document.querySelector(".site-header, header");
-
-  if (!header) {
-    console.log("American Federation header not found.");
-    return;
-  }
-
-  const menuButton =
-    header.querySelector(".menu-toggle") ||
-    header.querySelector(".menu-btn") ||
-    header.querySelector(".hamburger") ||
-    header.querySelector("button");
-
-  const navigation =
-    header.querySelector(".site-nav") ||
-    header.querySelector(".nav-menu") ||
-    header.querySelector("nav") ||
-    document.querySelector(".site-nav") ||
-    document.querySelector(".nav-menu") ||
-    document.querySelector("nav");
+  const menuButton = document.querySelector(".menu-toggle");
+  const navigation = document.querySelector(".nav");
 
   if (!menuButton || !navigation) {
-    console.log("American Federation menu elements not found.");
     return;
   }
 
-  menuButton.addEventListener("click", function (event) {
-    event.preventDefault();
-    event.stopPropagation();
+  menuButton.addEventListener("click", function () {
 
-    navigation.classList.toggle("menu-open");
+    navigation.classList.toggle("open");
+
+    const isOpen = navigation.classList.contains("open");
+
+    menuButton.setAttribute(
+      "aria-expanded",
+      isOpen ? "true" : "false"
+    );
+
   });
 
+  // Close the menu when a navigation link is selected
   navigation.querySelectorAll("a").forEach(function (link) {
+
     link.addEventListener("click", function () {
-      navigation.classList.remove("menu-open");
+
+      navigation.classList.remove("open");
+
+      menuButton.setAttribute(
+        "aria-expanded",
+        "false"
+      );
+
     });
+
   });
 
 });
