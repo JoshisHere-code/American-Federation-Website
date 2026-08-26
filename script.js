@@ -1,10 +1,1 @@
-document.getElementById('year').textContent = new Date().getFullYear();
-const toggle = document.querySelector('.menu-toggle');
-const nav = document.querySelector('.nav');
-toggle.addEventListener('click', () => nav.classList.toggle('open'));
-document.querySelectorAll('.nav a').forEach(a => a.addEventListener('click', () => nav.classList.remove('open')));
-function submitForm(e){
-  e.preventDefault();
-  document.getElementById('form-note').textContent = 'Your message form is ready — connect it to a free form endpoint before publishing.';
-  return false;
-}
+const menu=document.querySelector('.menu-toggle');const nav=document.querySelector('.nav');if(menu&&nav){menu.addEventListener('click',()=>{const open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',String(open))});nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menu.setAttribute('aria-expanded','false')}))}const year=document.getElementById('year');if(year)year.textContent=new Date().getFullYear();

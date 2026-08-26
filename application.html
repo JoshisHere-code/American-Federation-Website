@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>American Federation — Membership Application</title>
+  <style>
+    :root{
+      --gold:#d7aa3d;
+      --gold2:#edc15a;
+      --black:#090909;
+      --panel:#121212;
+      --text:#f5f2ea;
+      --muted:#b9b5ad;
+      --border:#3a3936;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      background:var(--black);
+      color:var(--text);
+      font-family:Arial,Helvetica,sans-serif;
+      line-height:1.55;
+    }
+    .wrap{max-width:820px;margin:auto;padding:28px 18px 60px}
+    .brand{
+      border-bottom:1px solid #3b3018;
+      padding:10px 0 20px;
+      margin-bottom:36px;
+      color:var(--gold2);
+      letter-spacing:.18em;
+      font-weight:700;
+      font-size:.82rem;
+    }
+    h1{
+      font-family:Georgia,"Times New Roman",serif;
+      font-size:clamp(2.1rem,7vw,4rem);
+      line-height:1.02;
+      margin:0 0 18px;
+      text-transform:uppercase;
+    }
+    h1 span{color:var(--gold2)}
+    .intro{color:var(--muted);font-size:1.05rem;margin-bottom:30px}
+    form{
+      background:var(--panel);
+      border:1px solid var(--border);
+      padding:22px;
+      border-radius:4px;
+    }
+    .section{
+      color:var(--gold2);
+      letter-spacing:.16em;
+      font-weight:700;
+      font-size:.78rem;
+      margin:26px 0 14px;
+      text-transform:uppercase;
+    }
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    label{display:block;font-weight:700;font-size:.9rem;margin-bottom:6px}
+    input,select,textarea{
+      width:100%;
+      background:#090909;
+      color:var(--text);
+      border:1px solid #4a4946;
+      border-radius:3px;
+      padding:13px 12px;
+      font:inherit;
+      font-size:16px;
+      outline:none;
+    }
+    input:focus,select:focus,textarea:focus{
+      border-color:var(--gold2);
+      box-shadow:0 0 0 2px rgba(215,170,61,.15);
+    }
+    textarea{min-height:120px;resize:vertical}
+    .full{grid-column:1/-1}
+    .check{
+      display:flex;gap:10px;align-items:flex-start;
+      margin-top:14px;color:var(--muted);font-weight:400;
+    }
+    .check input{width:20px;height:20px;flex:0 0 20px;margin-top:2px}
+    button{
+      width:100%;margin-top:24px;padding:16px;
+      border:0;border-radius:2px;background:var(--gold2);color:#111;
+      font-weight:800;letter-spacing:.08em;font-size:1rem;cursor:pointer;
+    }
+    button:disabled{opacity:.55;cursor:wait}
+    .notice{
+      display:none;margin-top:18px;padding:14px;border:1px solid var(--border);
+      color:var(--muted);background:#0d0d0d;
+    }
+    .notice.success{display:block;border-color:#6b5722;color:#f0dfb0}
+    .notice.error{display:block;border-color:#743b3b;color:#f0c7c7}
+    .small{font-size:.82rem;color:var(--muted);margin-top:14px}
+    @media(max-width:650px){.grid{grid-template-columns:1fr}form{padding:18px}}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <div class="brand">AMERICAN FEDERATION</div>
+
+    <h1>Membership <span>Application.</span></h1>
+    <p class="intro">
+      Complete the application below to request membership in the American Federation.
+      Applications are reviewed directly by the Federation.
+    </p>
+
+    <form id="membershipForm">
+      <div class="section">Applicant Information</div>
+
+      <div class="grid">
+        <div>
+          <label for="firstName">First Name *</label>
+          <input id="firstName" name="firstName" required autocomplete="given-name">
+        </div>
+        <div>
+          <label for="lastName">Last Name *</label>
+          <input id="lastName" name="lastName" required autocomplete="family-name">
+        </div>
+
+        <div>
+          <label for="birthMonth">Birth Month *</label>
+          <select id="birthMonth" name="birthMonth" required>
+            <option value="">Select month</option>
+            <option value="1">January</option><option value="2">February</option>
+            <option value="3">March</option><option value="4">April</option>
+            <option value="5">May</option><option value="6">June</option>
+            <option value="7">July</option><option value="8">August</option>
+            <option value="9">September</option><option value="10">October</option>
+            <option value="11">November</option><option value="12">December</option>
+          </select>
+        </div>
+        <div>
+          <label for="birthYear">Birth Year *</label>
+          <input id="birthYear" name="birthYear" type="number" min="1900" max="2026" required>
+        </div>
+
+        <div>
+          <label for="email">Email *</label>
+          <input id="email" name="email" type="email" required autocomplete="email">
+        </div>
+        <div>
+          <label for="phone">Phone *</label>
+          <input id="phone" name="phone" type="tel" required autocomplete="tel">
+        </div>
+
+        <div>
+          <label for="membershipType">Membership Type *</label>
+          <select id="membershipType" name="membershipType" required>
+            <option value="">Select one</option>
+            <option value="Individual">Individual</option>
+            <option value="Group">Group</option>
+            <option value="Business">Business</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="groupBusiness">Group / Business Name</label>
+          <input id="groupBusiness" name="groupBusiness">
+        </div>
+
+        <div class="full">
+          <label for="services">Services / Areas of Interest</label>
+          <input id="services" name="services" placeholder="Example: Life coaching, dog training, networking">
+        </div>
+
+        <div class="full">
+          <label for="whyJoin">Why would you like to join the American Federation? *</label>
+          <textarea id="whyJoin" name="whyJoin" required></textarea>
+        </div>
+
+        <div class="full">
+          <label for="skills">Skills, Experience, or Services You Can Contribute</label>
+          <textarea id="skills" name="skills"></textarea>
+        </div>
+
+        <div class="full">
+          <label class="check">
+            <input id="agreement" name="agreement" type="checkbox" required>
+            <span>I confirm that the information provided is accurate and that I am submitting this application for membership review.</span>
+          </label>
+        </div>
+      </div>
+
+      <button id="submitBtn" type="submit">SUBMIT MEMBERSHIP APPLICATION →</button>
+
+      <div id="notice" class="notice" aria-live="polite"></div>
+      <p class="small">
+        Your application will be reviewed by the American Federation. Submission does not
+        automatically guarantee membership approval.
+      </p>
+    </form>
+  </main>
+
+<script>
+  // After the Google Apps Script web app is deployed, paste its /exec URL here.
+  const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzqCTbEINE4P6Mw_OQoIPesJKl35O7GoM5JsZyrDQ4HcXmYGhJ1DvDb-tUOsqsfkjQ/exec";
+
+  const form = document.getElementById("membershipForm");
+  const btn = document.getElementById("submitBtn");
+  const notice = document.getElementById("notice");
+
+  form.addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+    if (APPS_SCRIPT_URL.includes("PASTE_YOUR_")) {
+      notice.className = "notice error";
+      notice.textContent = "The application form is built, but the Google Sheets connection has not been added yet.";
+      return;
+    }
+
+    btn.disabled = true;
+    btn.textContent = "SUBMITTING…";
+    notice.className = "notice";
+    notice.textContent = "";
+
+    const data = Object.fromEntries(new FormData(form).entries());
+
+    try {
+      const response = await fetch(APPS_SCRIPT_URL, {
+        method: "POST",
+        mode: "cors",
+        headers: {"Content-Type":"text/plain;charset=utf-8"},
+        body: JSON.stringify(data)
+      });
+
+      const result = await response.json();
+
+      if (!result.success) throw new Error(result.message || "Submission failed.");
+
+      notice.className = "notice success";
+      notice.textContent =
+        "Application submitted successfully. Your application number is " +
+        result.applicationNumber + ". The Federation will review your application.";
+      form.reset();
+    } catch (error) {
+      notice.className = "notice error";
+      notice.textContent = "We could not submit the application. Please try again or contact the Federation directly.";
+    } finally {
+      btn.disabled = false;
+      btn.textContent = "SUBMIT MEMBERSHIP APPLICATION →";
+    }
+  });
+</script>
+</body>
+</html>
