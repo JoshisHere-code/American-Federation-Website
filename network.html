@@ -13,7 +13,7 @@
 <style>
 
 /* =========================================
-   AMERICAN FEDERATION NETWORK PAGE
+   AMERICAN FEDERATION NETWORK
    ========================================= */
 
 .network-page {
@@ -38,7 +38,6 @@
   font-family: Cinzel, Georgia, serif;
   font-size: clamp(3rem, 8vw, 6.5rem);
   line-height: .95;
-  letter-spacing: .01em;
 }
 
 .network-hero h1 span {
@@ -100,12 +99,6 @@
   background: #0d0e0d;
   padding: 22px;
   text-decoration: none;
-}
-
-.network-logo-link img {
-  width: 150px;
-  height: 150px;
-  object-fit: contain;
 }
 
 .network-text-logo {
@@ -171,10 +164,6 @@
   flex-wrap: wrap;
 }
 
-/* =========================================
-   MOBILE NETWORK LAYOUT
-   ========================================= */
-
 @media (max-width: 800px) {
 
   .network-business-grid {
@@ -198,7 +187,7 @@
   }
 
   .network-logo-link {
-    min-height: 180px;
+    min-height: 150px;
   }
 
   .network-bottom {
@@ -206,34 +195,6 @@
   }
 
 }
-
-/* =========================================
-   MOBILE MENU FOR THIS PAGE
-   ========================================= */
-
-@media (max-width: 900px) {
-
-  .nav.menu-open {
-    display: flex !important;
-    position: absolute !important;
-    top: 100% !important;
-    left: 0 !important;
-    right: 0 !important;
-    width: 100% !important;
-    flex-direction: column !important;
-    align-items: stretch !important;
-    background: #090a09 !important;
-    padding: 18px 5vw !important;
-    z-index: 9999 !important;
-  }
-
-  .nav.menu-open a {
-    padding: 10px 0;
-  }
-
-  .nav.menu-open .nav-cta {
-    text-align: center;
-  }
 
 </style>
 
@@ -253,7 +214,6 @@
 
   </a>
 
-
   <button
     class="menu-toggle"
     aria-label="Open menu"
@@ -262,7 +222,6 @@
     ☰
 
   </button>
-
 
   <nav class="nav" aria-label="Main navigation">
 
@@ -296,10 +255,6 @@
 <main class="network-page">
 
 
-<!-- =========================================
-     NETWORK HERO
-     ========================================= -->
-
 <section class="network-hero">
 
   <p class="eyebrow">
@@ -321,10 +276,6 @@
 
 </section>
 
-
-<!-- =========================================
-     MEMBER BUSINESSES & ORGANIZATIONS
-     ========================================= -->
 
 <section class="network-section">
 
@@ -349,9 +300,7 @@
   <div class="network-business-grid">
 
 
-    <!-- =====================================
-         THOMAS MUSIC GROUP
-         ===================================== -->
+    <!-- THOMAS MUSIC GROUP -->
 
     <article class="network-business-card">
 
@@ -364,13 +313,11 @@
 
           THOMAS<br>
           MUSIC GROUP<br>
-
           <small>LLC</small>
 
         </div>
 
       </a>
-
 
       <div>
 
@@ -395,9 +342,7 @@
     </article>
 
 
-    <!-- =====================================
-         KNIGHTS OF SAINT THOMAS
-         ===================================== -->
+    <!-- KNIGHTS OF SAINT THOMAS -->
 
     <article class="network-business-card">
 
@@ -406,12 +351,14 @@
         href="index.html"
         aria-label="Return to American Federation home">
 
-        <img
-          src="knights-of-saint-thomas.png"
-          alt="Knights of Saint Thomas logo">
+        <div class="network-text-logo">
+
+          KNIGHTS OF<br>
+          SAINT THOMAS
+
+        </div>
 
       </a>
-
 
       <div>
 
@@ -435,9 +382,7 @@
     </article>
 
 
-    <!-- =====================================
-         AMERICAN FEDERATION EMPIRE
-         ===================================== -->
+    <!-- AMERICAN FEDERATION EMPIRE -->
 
     <article class="network-business-card">
 
@@ -455,7 +400,6 @@
         </div>
 
       </a>
-
 
       <div>
 
@@ -499,10 +443,6 @@
 </section>
 
 
-<!-- =========================================
-     JOIN / RETURN HOME
-     ========================================= -->
-
 <section class="network-bottom">
 
   <p>
@@ -513,7 +453,6 @@
 
   </p>
 
-
   <div class="network-buttons">
 
     <a
@@ -523,7 +462,6 @@
       Join the Federation
 
     </a>
-
 
     <a
       class="button button-outline"
@@ -541,14 +479,9 @@
 </main>
 
 
-<!-- =========================================
-     FOOTER
-     ========================================= -->
-
 <footer class="footer">
 
   <div class="footer-top">
-
 
     <div class="footer-brand">
 
@@ -608,7 +541,6 @@
 
     </div>
 
-
   </div>
 
 
@@ -628,7 +560,6 @@
 document.getElementById("year").textContent =
   new Date().getFullYear();
 </script>
-
 
 </body>
 </html>
