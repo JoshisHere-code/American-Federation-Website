@@ -1,25 +1,55 @@
-const menu=document.querySelector('.menu-toggle');const nav=document.querySelector('.nav');if(menu&&nav){menu.addEventListener('click',()=>{const open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',String(open))});nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menu.setAttribute('aria-expanded','false')}))}const year=document.getElementById('year');if(year)year.textContent=new Date().getFullYear();
-/* =========================================
-   AMERICAN FEDERATION MOBILE MENU
-   ========================================= */
-
 document.addEventListener("DOMContentLoaded", function () {
 
-  const menuButton = document.querySelector(".menu-toggle");
-  const navigation = document.querySelector(".site-nav");
+  // Find the mobile menu button
+  const menuButton =
+    document.querySelector(".menu-toggle") ||
+    document.querySelector(".menu-btn") ||
+    document.querySelector(".hamburger") ||
+    document.querySelector("header button") ||
+    document.querySelector(".site-header button");
+
+  // Find the navigation menu
+  const navigation =
+    document.querySelector(".site-nav") ||
+    document.querySelector(".nav-menu") ||
+    document.querySelector(".navigation") ||
+    document.querySelector("header nav") ||
+    document.querySelector("nav");
 
   if (!menuButton || !navigation) {
+    console.log("American Federation menu elements not found.");
     return;
   }
 
-  menuButton.addEventListener("click", function () {
+  menuButton.addEventListener("click", function (event) {
+    event.preventDefault();
+    event.stopPropagation();
 
-    navigation.classList.toggle("open");
+    navigation.classList.toggle("menu-open");
 
-    const isOpen = navigation.classList.contains("open");
+    if (navigation.classList.contains("menu-open")) {
+      navigation.style.display = "flex";
+      navigation.style.flexDirection = "column";
+      navigation.style.visibility = "visible";
+      navigation.style.opacity = "1";
+      navigation.style.maxHeight = "1000px";
+    } else {
+      navigation.style.display = "";
+      navigation.style.visibility = "";
+      navigation.style.opacity = "";
+      navigation.style.maxHeight = "";
+    }
+  });
 
-    menuButton.setAttribute("aria-expanded", isOpen);
-
+  // Close the menu after selecting a link
+  navigation.querySelectorAll("a").forEach(function (link) {
+    link.addEventListener("click", function () {
+      navigation.classList.remove("menu-open");
+      navigation.style.display = "";
+      navigation.style.visibility = "";
+      navigation.style.opacity = "";
+      navigation.style.maxHeight = "";
+    });
   });
 
 });
