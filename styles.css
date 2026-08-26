@@ -84,3 +84,48 @@ main{width:100%;overflow:hidden}
 .music-link-card small{color:var(--muted);letter-spacing:.04em;font-weight:500}
 @media(max-width:800px){.music-feature,.latest-release,.artist-section{grid-template-columns:1fr;gap:35px}.music-feature-art,.release-art{max-width:500px}.music-feature-copy{order:2}.latest-release{padding-top:60px}.music-link-grid{grid-template-columns:1fr}.music-hero{min-height:400px}}
 @media(max-width:600px){.music-feature-art{box-shadow:10px 10px 0 #090a09}.music-feature-copy h2,.music-hero h1,.latest-release h2,.artist-copy h2{font-size:clamp(2.35rem,11vw,3.6rem)}.stream-buttons{flex-direction:column}.stream-buttons .button{width:100%}.release-art{box-shadow:10px 10px 0 #d7d1c5}}
+
+/* Membership page */
+.membership-hero{min-height:560px;display:grid;align-items:center;background:radial-gradient(circle at 75% 35%,rgba(199,154,59,.18),transparent 30%),linear-gradient(120deg,#080908,#171713 60%,#0b0c0b);border-bottom:1px solid var(--line)}
+.membership-hero-copy{max-width:850px}
+.membership-hero h1{font:600 clamp(3.2rem,8vw,6.5rem)/.92 Cinzel,Georgia,serif;margin:0 0 24px}
+.membership-hero h1 span,.membership-types h2 span,.free-membership h2 span,.services h2 span,.member-expectations h2 span,.apply-card h2 span{color:var(--gold2)}
+.membership-lede{font:600 1.15rem Cinzel,Georgia,serif;color:#eee;max-width:620px}
+.membership-hero-copy>p:not(.eyebrow):not(.membership-lede){color:var(--muted);max-width:650px;font-size:1.02rem;margin-bottom:28px}
+.free-membership{background:#f1eee5;color:#111;text-align:center}
+.free-membership-inner{max-width:850px;margin:auto}
+.free-membership .eyebrow{color:#8d6826}
+.free-membership h2{font:600 clamp(2.3rem,5vw,4.2rem)/1.02 Cinzel,Georgia,serif;margin:0 0 18px}
+.free-membership p:last-child{color:#555;max-width:680px;margin:auto;font-size:1.02rem}
+.membership-types{background:#11120f}
+.membership-type-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:var(--max);margin:auto}
+.membership-type-card{padding:30px;border:1px solid var(--line);background:#0b0c0b;min-height:340px}
+.membership-type-card .member-no{color:var(--gold2);font:600 1rem Cinzel,Georgia,serif}
+.membership-type-card h3{font:600 2rem Cinzel,Georgia,serif;margin:18px 0 10px;color:#fff}
+.membership-type-card p{color:var(--muted)}
+.membership-type-card ul{padding-left:18px;color:#ddd}
+.membership-type-card li{margin:8px 0}
+.services{background:#f1eee5;color:#111}
+.services .eyebrow{color:#8d6826}
+.services .center-heading>p:last-child{color:#555}
+.service-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;max-width:var(--max);margin:auto}
+.service-grid article{border-top:2px solid #222;padding:24px 12px 0}
+.service-grid h3{font:600 1.3rem Cinzel,Georgia,serif;margin:0 0 10px}
+.service-grid p{color:#555;margin:0}
+.member-expectations{background:#080908}
+.expectations-copy{max-width:1000px;margin:auto}
+.expectations-copy>p:not(.eyebrow){color:var(--muted);max-width:700px}
+.expectation-list{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-top:30px}
+.expectation-list div{border-left:2px solid var(--gold);padding:8px 0 8px 16px}
+.expectation-list strong{display:block;color:var(--gold2);font-size:.72rem;letter-spacing:.15em;margin-bottom:7px}
+.expectation-list span{color:#ddd;font-size:.9rem}
+.apply-section{background:#151614}
+.apply-card{max-width:950px;margin:auto;padding:42px;border:1px solid var(--line);background:linear-gradient(145deg,#0c0d0c,#171713)}
+.apply-card h2{font:600 clamp(2.3rem,5vw,4rem)/1.02 Cinzel,Georgia,serif;margin:0 0 18px}
+.apply-card>p:not(.eyebrow):not(.apply-note){color:var(--muted);max-width:700px}
+.apply-steps{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:28px 0}
+.apply-steps div{display:flex;align-items:center;gap:13px;padding:16px;border:1px solid var(--line);color:#ddd}
+.apply-steps b{display:grid;place-items:center;flex:0 0 34px;height:34px;border:1px solid var(--gold);border-radius:50%;color:var(--gold2);font-family:Cinzel,Georgia,serif}
+.apply-note{color:#777;font-size:.78rem;margin-top:16px}
+@media(max-width:900px){.membership-type-grid{grid-template-columns:1fr}.service-grid{grid-template-columns:repeat(2,1fr)}.expectation-list{grid-template-columns:1fr}.apply-steps{grid-template-columns:1fr}}
+@media(max-width:600px){.membership-hero{min-height:auto}.membership-hero-copy{padding-top:35px}.membership-hero h1{font-size:clamp(3rem,15vw,5rem)}.membership-type-card{min-height:0;padding:24px 20px}.service-grid{grid-template-columns:1fr}.apply-card{padding:28px 20px}.apply-card .button{width:100%;text-align:center}.free-membership h2{font-size:clamp(2.3rem,11vw,3.5rem)}}
