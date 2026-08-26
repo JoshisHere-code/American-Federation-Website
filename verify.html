@@ -111,40 +111,92 @@
 
 </main>
 
+
 <script>
 
 function verifyMember() {
 
   const memberId =
-    document.getElementById("memberId").value.trim().toUpperCase();
+    document.getElementById("memberId").value.trim();
 
   const result =
     document.getElementById("result");
 
   if (!memberId) {
+    result.className = "error";
+    result.innerHTML =
+      "<strong>Please enter your Member ID.</strong>";
+    return;
+  }
+
+  result.className = "";
+  result.innerHTML = "Verifying membership...";
+
+  const callbackName =
+    "americanFederationVerify_" +
+    Date.now();
+
+  window[callbackName] = function(data) {
+
+    if (data.success && data.verified) {
+
+      result.className = "verified";
+
+      result.innerHTML =
+        "<strong>MEMBERSHIP VERIFIED</strong><br><br>" +
+        "Member ID: " + data.memberId + "<br>" +
+        "Name: " + data.firstName + " " +
+        data.lastName + "<br>" +
+        "Membership Type: " +
+        data.membershipType;
+
+    } else {
+
+      result.className = "error";
+
+      result.innerHTML =
+        "<strong>MEMBERSHIP NOT FOUND</strong><br><br>" +
+        "We could not find that Member ID in the " +
+        "American Federation membership records.";
+
+    }
+
+    delete window[callbackName];
+    document.body.removeChild(script);
+
+  };
+
+  const script =
+    document.createElement("script");
+
+  script.src =
+    "https://script.google.com/macros/s/AKfycbxVtfkw-opw8Q1wu_s78zA8sHoTjN1k8Ov_tAt7hpaOyxIpOHK0yKvXej3E5vwSv3q-/exec" +
+    "?memberId=" +
+    encodeURIComponent(memberId) +
+    "&callback=" +
+    callbackName;
+
+  script.onerror = function() {
 
     result.className = "error";
 
     result.innerHTML =
-      "<strong>Please enter your Member ID.</strong>";
+      "<strong>Verification system unavailable.</strong><br><br>" +
+      "Please try again in a moment.";
 
-    return;
-  }
+    delete window[callbackName];
 
-  /*
-   * The Google Apps Script connection
-   * will be added here next.
-   */
+    if (script.parentNode) {
+      document.body.removeChild(script);
+    }
 
-  result.className = "verified";
+  };
 
-  result.innerHTML =
-    "<strong>Verification system is ready.</strong><br><br>" +
-    "Member ID entered: " + memberId;
-
+  document.body.appendChild(script);
 }
 
 </script>
+
 
 </body>
 </html>
