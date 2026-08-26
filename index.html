@@ -1,77 +1,523 @@
-document.addEventListener("DOMContentLoaded", function () {
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="American Federation is a brotherhood and network of individuals, groups, and businesses united by faith, patriotism, personal growth, service, and mutual support.">
+<title>American Federation | United in Freedom. Guided by Faith. Built for the Future.</title>
+<link rel="stylesheet" href="styles.css">
+</head>
 
-  const menuButton = document.querySelector(".menu-toggle");
-  const navigation = document.querySelector(".nav");
+<body>
 
-  if (!menuButton || !navigation) {
-    console.log("American Federation menu not found.");
-    return;
-  }
+<header class="site-header">
 
-  menuButton.addEventListener("click", function (event) {
-    event.preventDefault();
-    event.stopPropagation();
+<a class="brand" href="#home">
+<img src="american-federation-logo.png" alt="American Federation emblem">
+<span>AMERICAN FEDERATION</span>
+</a>
 
-    const isOpen = navigation.classList.toggle("menu-open");
+<button class="menu-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
 
-    menuButton.setAttribute("aria-expanded", isOpen ? "true" : "false");
+<nav class="nav">
+<a href="#about">About</a>
+<a href="programs.html">Programs &amp; Services</a>
+<a href="#membership">Membership</a>
+<a href="#network">Network</a>
+<a href="#publications">Publications</a>
+<a href="music.html">Thomas Music Group</a>
+<a href="music.html">Music</a>
+<a href="contact.html">Contact</a>
+<a class="nav-cta" href="membership.html">Join the Federation</a>
+</nav>
 
-    if (isOpen) {
-      navigation.style.display = "flex";
-      navigation.style.flexDirection = "column";
-      navigation.style.position = "absolute";
-      navigation.style.top = "100%";
-      navigation.style.left = "0";
-      navigation.style.right = "0";
-      navigation.style.width = "100%";
-      navigation.style.zIndex = "9999";
-      navigation.style.visibility = "visible";
-      navigation.style.opacity = "1";
-    } else {
-      closeMenu();
-    }
-  });
+</header>
 
-  function closeMenu() {
-    navigation.classList.remove("menu-open");
+<main>
 
-    menuButton.setAttribute("aria-expanded", "false");
+<section class="hero" id="home">
+<div class="hero-bg"></div>
 
-    navigation.style.display = "";
-    navigation.style.flexDirection = "";
-    navigation.style.position = "";
-    navigation.style.top = "";
-    navigation.style.left = "";
-    navigation.style.right = "";
-    navigation.style.width = "";
-    navigation.style.zIndex = "";
-    navigation.style.visibility = "";
-    navigation.style.opacity = "";
-  }
+<div class="hero-inner">
 
-  // Close menu when a link is selected
-  navigation.querySelectorAll("a").forEach(function (link) {
-    link.addEventListener("click", function () {
-      closeMenu();
-    });
-  });
+<p class="eyebrow">AMERICAN FEDERATION</p>
 
-  // Close menu when tapping outside it
-  document.addEventListener("click", function (event) {
-    if (
-      navigation.classList.contains("menu-open") &&
-      !navigation.contains(event.target) &&
-      !menuButton.contains(event.target)
-    ) {
-      closeMenu();
-    }
-  });
+<h1>
+UNITED IN FREEDOM.<br>
+<span>GUIDED BY FAITH.</span><br>
+BUILT FOR THE FUTURE.
+</h1>
 
-  // Close menu with Escape
-  document.addEventListener("keydown", function (event) {
-    if (event.key === "Escape") {
-      closeMenu();
-    }
-  });
+<div class="gold-rule"></div>
 
-});
+<p class="hero-lede">
+A brotherhood. A network. A movement.<br>
+Stronger together. Building for generations.
+</p>
+
+<div class="hero-actions">
+<a class="button button-gold" href="membership.html">Join the Federation</a>
+<a class="button button-outline" href="#about">Discover the Federation</a>
+</div>
+
+</div>
+</section>
+
+
+<section class="about section" id="about">
+
+<div class="about-copy">
+
+<p class="eyebrow">WHAT IS AMERICAN FEDERATION?</p>
+
+<h2>
+More Than a Membership —
+<span>A Brotherhood.</span>
+</h2>
+
+<p>
+American Federation is a brotherhood and network built for people who believe individuals can accomplish more when they stand together.
+</p>
+
+<p>
+Members can join as individuals, groups, or businesses and become part of a growing network based on
+<strong>faith, patriotism, brotherhood, personal development, service, and mutual support.</strong>
+</p>
+
+<p>
+The Federation connects member-owned businesses and organizations, creating opportunities to collaborate, support one another, exchange services, and build something that benefits the entire Federation.
+</p>
+
+</div>
+
+</section>
+
+
+<section class="why section">
+
+<div class="center-heading">
+
+<p class="eyebrow">WHY WE EXIST</p>
+
+<h2>
+One Community.
+<span>One Purpose.</span>
+</h2>
+
+<p>
+We believe people can accomplish more when they have a community behind them. American Federation exists to help create that community.
+</p>
+
+</div>
+
+
+<div class="value-grid">
+
+<article>
+<div class="value-icon">✦</div>
+<h3>Brotherhood</h3>
+<p>Building relationships based on trust, loyalty, responsibility, and respect.</p>
+</article>
+
+<article>
+<div class="value-icon">✚</div>
+<h3>Faith</h3>
+<p>Honoring God and encouraging Christian values in the lives of our members.</p>
+</article>
+
+<article>
+<div class="value-icon">★</div>
+<h3>Patriotism</h3>
+<p>Respect for our country and a commitment to freedom, truth, and justice.</p>
+</article>
+
+<article>
+<div class="value-icon">↗</div>
+<h3>Growth</h3>
+<p>Pursuing personal development, education, discipline, and excellence.</p>
+</article>
+
+<article>
+<div class="value-icon">♢</div>
+<h3>Service</h3>
+<p>Serving our members and communities and helping others around us.</p>
+</article>
+
+<article>
+<div class="value-icon">∞</div>
+<h3>Mutual Support</h3>
+<p>Supporting one another in business, in life, and in every mission.</p>
+</article>
+
+</div>
+</section>
+
+
+<section class="members section" id="membership">
+
+<div class="center-heading">
+
+<p class="eyebrow">ONE FEDERATION — MANY MEMBERS</p>
+
+<h2>Find Your Place in the Federation.</h2>
+
+</div>
+
+
+<div class="member-grid">
+
+<article class="member-card">
+
+<span class="member-no">01</span>
+
+<h3>Individuals</h3>
+
+<p>
+People who want to become part of the brotherhood, grow personally, and connect with others who share the same core values.
+</p>
+
+<a href="membership.html">Explore Membership →</a>
+
+</article>
+
+
+<article class="member-card">
+
+<span class="member-no">02</span>
+
+<h3>Groups</h3>
+
+<p>
+Organizations, ministries, clubs, teams, and communities that want to stand together and make a greater impact.
+</p>
+
+<a href="membership.html">Explore Membership →</a>
+
+</article>
+
+
+<article class="member-card">
+
+<span class="member-no">03</span>
+
+<h3>Businesses</h3>
+
+<p>
+Businesses and entrepreneurs who want to participate, collaborate, and grow within the Federation network.
+</p>
+
+<a href="membership.html">Explore Membership →</a>
+
+</article>
+
+</div>
+
+<p class="membership-tagline">
+Different backgrounds. One purpose. One Federation.
+</p>
+
+</section>
+
+
+<section class="network section" id="network">
+
+<div class="network-copy">
+
+<p class="eyebrow">THE FEDERATION NETWORK</p>
+
+<h2>
+Connected Members.<br>
+<span>Stronger Together.</span>
+</h2>
+
+<p>
+The Federation Network connects members and member-owned businesses, creating opportunities to collaborate, promote, exchange services, and support one another.
+</p>
+
+<ul>
+
+<li>Member businesses can remain independently owned while participating in the Federation network.</li>
+
+<li>Members can collaborate on projects and support one another.</li>
+
+<li>Businesses can help promote Federation initiatives and affiliated nonprofit activities.</li>
+
+<li>Membership contributions can help fund the Federation's operations, programs, growth, and future projects.</li>
+
+<li>Strong relationships create stronger opportunities for everyone.</li>
+
+</ul>
+
+<a class="button button-gold" href="network.html">
+Explore the Network
+</a>
+
+</div>
+
+
+<div class="network-art" aria-hidden="true">
+
+<div class="network-ring">AF</div>
+
+<div class="node n1">●</div>
+<div class="node n2">●</div>
+<div class="node n3">●</div>
+<div class="node n4">●</div>
+
+</div>
+
+</section>
+
+
+<section class="process section">
+
+<div class="center-heading">
+
+<p class="eyebrow">HOW MEMBERSHIP WORKS</p>
+
+<h2>
+Join. Participate.
+<span>Build.</span>
+</h2>
+
+</div>
+
+
+<div class="process-grid">
+
+<article>
+<b>1</b>
+<h3>JOIN</h3>
+<p>Choose your membership type and submit your application.</p>
+</article>
+
+<article>
+<b>2</b>
+<h3>PARTICIPATE</h3>
+<p>Connect with members, attend events, access resources, and get involved.</p>
+</article>
+
+<article>
+<b>3</b>
+<h3>BUILD</h3>
+<p>Develop yourself, strengthen your business, and help build the future of the Federation.</p>
+</article>
+
+</div>
+
+
+<div class="center-action">
+
+<a class="button button-outline-dark" href="membership.html">
+Apply for Membership
+</a>
+
+</div>
+
+</section>
+
+
+<section class="publications section" id="publications">
+
+<div class="book-visual">
+
+<div class="book-cover">
+
+<small>THE</small>
+
+<strong>
+LIFE<br>
+MANUAL
+</strong>
+
+<span>
+AMERICAN<br>
+FEDERATION
+</span>
+
+</div>
+
+</div>
+
+
+<div class="publication-copy">
+
+<p class="eyebrow">AMERICAN FEDERATION PUBLICATIONS</p>
+
+<h2>The Life Manual</h2>
+
+<p class="publication-lede">
+A practical guide for purpose, discipline, personal development, and success in every area of life.
+</p>
+
+
+<ul class="check-list">
+
+<li>Values &amp; Principles</li>
+<li>Personal Development</li>
+<li>Goals &amp; Planning</li>
+<li>Discipline &amp; Mindset</li>
+<li>And much more</li>
+
+</ul>
+
+
+<div class="amazon-box">
+
+<div>
+
+<strong>Available on</strong>
+
+<div class="amazon-word">amazon</div>
+
+</div>
+
+<a class="button button-gold"
+href="https://a.co/d/0e5tbI9X"
+target="_blank"
+rel="noopener noreferrer">
+
+Get The Life Manual on Amazon →
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section class="music-feature section" id="music">
+
+<div class="music-feature-art">
+
+<img
+src="all-father-holy-father.jpg"
+alt="All Father/Holy Father by JoshisHere">
+
+</div>
+
+
+<div class="music-feature-copy">
+
+<p class="eyebrow">THOMAS MUSIC GROUP LLC</p>
+
+<h2>
+Music. Creativity.
+<span>Expression.</span>
+</h2>
+
+<p>
+Explore the music of <strong>JoshisHere</strong>, presented by Thomas Music Group LLC. Discover the latest release and follow the music as the label grows.
+</p>
+
+
+<div class="music-feature-release">
+
+<span>LATEST RELEASE</span>
+
+<strong>All Father/Holy Father</strong>
+
+<small>JoshisHere</small>
+
+</div>
+
+
+<a class="button button-gold" href="music.html">
+Explore Thomas Music Group →
+</a>
+
+</div>
+
+</section>
+
+
+<section class="join-banner" id="contact">
+
+<div>
+
+<p class="eyebrow">READY TO JOIN SOMETHING GREATER?</p>
+
+<h2>BECOME PART OF THE AMERICAN FEDERATION.</h2>
+
+<p>
+United in Freedom. Guided by Faith. Built for the Future.
+</p>
+
+</div>
+
+
+<a class="button button-gold" href="membership.html">
+Join the Federation Today →
+</a>
+
+</section>
+
+</main>
+
+
+<footer class="footer">
+
+<div class="footer-top">
+
+
+<div class="footer-brand">
+
+<img
+src="american-federation-logo.png"
+alt="">
+
+<strong>AMERICAN FEDERATION</strong>
+
+<p>
+A brotherhood. A network. A movement.
+</p>
+
+</div>
+
+
+<div>
+
+<h4>QUICK LINKS</h4>
+
+<a href="#about">About</a>
+
+<a href="#membership">Membership</a>
+
+<a href="#network">Network</a>
+
+<a href="#publications">Publications</a>
+
+<a href="music.html">Thomas Music Group</a>
+
+</div>
+
+
+<div>
+
+<h4>GET INVOLVED</h4>
+
+<a href="membership.html">Apply for Membership</a>
+
+<a href="network.html">Business Network</a>
+
+<a href="contact.html">Contact</a>
+
+</div>
+
+
+</div>
+
+
+<p class="copyright">
+© <span id="year"></span> American Federation. All rights reserved.
+</p>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
