@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Verify Membership | American Federation</title>
+
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    .verify-box {
+      max-width: 600px;
+      margin: 60px auto;
+      padding: 35px 25px;
+      text-align: center;
+    }
+
+    .verify-box h1 {
+      margin-bottom: 15px;
+    }
+
+    .verify-box p {
+      margin-bottom: 25px;
+    }
+
+    .member-id-input {
+      width: 100%;
+      max-width: 420px;
+      padding: 16px;
+      font-size: 18px;
+      text-align: center;
+      border: 1px solid #777;
+      border-radius: 4px;
+      background: #111;
+      color: #fff;
+      box-sizing: border-box;
+    }
+
+    .verify-button {
+      margin-top: 18px;
+      cursor: pointer;
+    }
+
+    #result {
+      margin-top: 30px;
+      padding: 20px;
+      display: none;
+      border: 1px solid #b08b25;
+    }
+
+    .verified {
+      display: block !important;
+    }
+
+    .error {
+      display: block !important;
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="site-header">
+  <a class="brand" href="index.html">
+    <img src="american-federation-logo.png"
+         alt="American Federation">
+    <span>AMERICAN FEDERATION</span>
+  </a>
+</header>
+
+<main class="process section">
+
+  <div class="verify-box">
+
+    <p class="eyebrow">MEMBERSHIP VERIFICATION</p>
+
+    <h1>Verify Your Membership</h1>
+
+    <p>
+      Enter your American Federation Member ID below
+      to verify your membership status.
+    </p>
+
+    <input
+      id="memberId"
+      class="member-id-input"
+      type="text"
+      placeholder="Enter Member ID"
+      autocomplete="off"
+    >
+
+    <br>
+
+    <button
+      class="button verify-button"
+      onclick="verifyMember()">
+      VERIFY MEMBERSHIP →
+    </button>
+
+    <div id="result"></div>
+
+    <br><br>
+
+    <a class="button button-outline-dark"
+       href="index.html">
+      RETURN HOME
+    </a>
+
+  </div>
+
+</main>
+
+<script>
+
+function verifyMember() {
+
+  const memberId =
+    document.getElementById("memberId").value.trim().toUpperCase();
+
+  const result =
+    document.getElementById("result");
+
+  if (!memberId) {
+
+    result.className = "error";
+
+    result.innerHTML =
+      "<strong>Please enter your Member ID.</strong>";
+
+    return;
+  }
+
+  /*
+   * The Google Apps Script connection
+   * will be added here next.
+   */
+
+  result.className = "verified";
+
+  result.innerHTML =
+    "<strong>Verification system is ready.</strong><br><br>" +
+    "Member ID entered: " + memberId;
+
+}
+
+</script>
+
+</body>
+</html>
