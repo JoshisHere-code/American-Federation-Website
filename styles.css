@@ -42,3 +42,45 @@
 
 html,body{max-width:100%;overflow-x:hidden}
 main{width:100%;overflow:hidden}
+
+/* Thomas Music Group */
+.music-feature{display:grid;grid-template-columns:minmax(260px,420px) 1fr;gap:55px;align-items:center;background:#10110f;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.music-feature-art{max-width:420px;overflow:hidden;border:1px solid rgba(255,255,255,.08);box-shadow:18px 18px 0 #090a09}
+.music-feature-art img{width:100%;aspect-ratio:1/1;object-fit:cover}
+.music-feature-copy h2,.music-hero h1,.latest-release h2,.artist-copy h2{font-size:clamp(2.4rem,5vw,4.5rem);line-height:1.02;margin:0 0 18px;font-family:Cinzel,Georgia,serif}
+.music-feature-copy h2 span,.music-hero h1 span{color:var(--gold2)}
+.music-feature-copy>p:not(.eyebrow){color:var(--muted);max-width:650px}
+.music-feature-release{border-left:2px solid var(--gold);padding:8px 0 8px 18px;margin:26px 0}
+.music-feature-release span,.music-feature-release small{display:block;color:var(--gold2);font-size:.68rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase}
+.music-feature-release strong{display:block;font:600 1.35rem Cinzel,Georgia,serif;margin:4px 0}
+.music-page{background:var(--black)}
+.music-hero{min-height:430px;display:grid;align-items:center;background:radial-gradient(circle at 75% 45%,rgba(199,154,59,.18),transparent 30%),linear-gradient(120deg,#080908,#171713 60%,#0b0c0b);border-bottom:1px solid var(--line)}
+.music-hero-copy{max-width:900px}
+.music-hero h1{font-size:clamp(3rem,7vw,6rem);margin-bottom:24px}
+.music-hero-copy>p:not(.eyebrow){color:var(--muted);max-width:720px;font-size:1.05rem}
+.latest-release{display:grid;grid-template-columns:minmax(280px,520px) 1fr;gap:65px;align-items:center;background:#f1eee5;color:#111}
+.release-art{width:100%;max-width:520px;border:1px solid #b8b1a3;box-shadow:20px 20px 0 #d7d1c5}
+.release-art img{width:100%;display:block;aspect-ratio:1/1;object-fit:cover}
+.release-copy h2{font-size:clamp(2.4rem,5vw,4.3rem);margin-bottom:7px}
+.release-copy .eyebrow{color:#8d6826}
+.release-artist{font:600 1.15rem Cinzel,Georgia,serif;margin:0 0 20px}
+.release-copy>p:not(.eyebrow):not(.release-artist){color:#555;max-width:600px}
+.stream-buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}
+.stream-buttons .button-outline{border-color:#222;color:#111}
+.stream-buttons .button-outline:hover{background:#111;color:#fff}
+.artist-section{display:grid;grid-template-columns:1.2fr .8fr;gap:45px;background:#080908}
+.artist-copy h2{color:var(--white)}
+.artist-copy>p:not(.eyebrow){color:var(--muted);max-width:700px}
+.future-release-panel{align-self:center;border:1px solid var(--line);padding:30px;background:#11120f}
+.future-release-panel span{color:var(--gold2);font-size:.68rem;font-weight:800;letter-spacing:.15em}
+.future-release-panel strong{display:block;font:600 1.35rem Cinzel,Georgia,serif;margin:12px 0}
+.future-release-panel p{color:var(--muted);margin:0;font-size:.85rem}
+.music-links{background:#151614}
+.music-link-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:15px;max-width:850px!important}
+.music-link-card{padding:28px;border:1px solid var(--line);background:#0f100e;transition:.2s}
+.music-link-card:hover{transform:translateY(-3px);border-color:var(--gold2)}
+.music-link-card span,.music-link-card small{display:block;color:var(--gold2);font-size:.68rem;font-weight:800;letter-spacing:.14em}
+.music-link-card strong{display:block;font:600 1.5rem Cinzel,Georgia,serif;color:#fff;margin:10px 0}
+.music-link-card small{color:var(--muted);letter-spacing:.04em;font-weight:500}
+@media(max-width:800px){.music-feature,.latest-release,.artist-section{grid-template-columns:1fr;gap:35px}.music-feature-art,.release-art{max-width:500px}.music-feature-copy{order:2}.latest-release{padding-top:60px}.music-link-grid{grid-template-columns:1fr}.music-hero{min-height:400px}}
+@media(max-width:600px){.music-feature-art{box-shadow:10px 10px 0 #090a09}.music-feature-copy h2,.music-hero h1,.latest-release h2,.artist-copy h2{font-size:clamp(2.35rem,11vw,3.6rem)}.stream-buttons{flex-direction:column}.stream-buttons .button{width:100%}.release-art{box-shadow:10px 10px 0 #d7d1c5}}
