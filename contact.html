@@ -1,1 +1,228 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Contact | American Federation</title><link rel="stylesheet" href="styles.css"></head><body><header class="site-header"><a class="brand" href="index.html"><img src="american-federation-logo.png" alt=""><span>AMERICAN FEDERATION</span></a></header><main class="process section"><div class="center-heading"><p class="eyebrow">AMERICAN FEDERATION</p><h2>Contact</h2><p>A working contact form and official contact information will be added here.</p></div><div class="center-action"><a class="button button-outline-dark" href="index.html">Return Home</a></div></main></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Contact | American Federation</title>
+
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    .contact-page {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 80px 25px 100px;
+      text-align: center;
+    }
+
+    .contact-label {
+      color: #9b7a2f;
+      font-weight: 700;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .contact-page h1 {
+      font-size: clamp(48px, 10vw, 90px);
+      margin: 0 0 30px;
+    }
+
+    .contact-intro {
+      max-width: 700px;
+      margin: 0 auto 50px;
+      font-size: 20px;
+      line-height: 1.7;
+      color: #555;
+    }
+
+    .contact-form {
+      max-width: 650px;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    .contact-form label {
+      display: block;
+      margin: 20px 0 8px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 16px;
+      border: 1px solid #9b7a2f;
+      background: #fff;
+      color: #111;
+      font-size: 16px;
+      font-family: inherit;
+    }
+
+    .contact-form textarea {
+      min-height: 180px;
+      resize: vertical;
+    }
+
+    .send-button {
+      width: 100%;
+      margin-top: 30px;
+      padding: 18px;
+      border: 2px solid #c9a23a;
+      background: #c9a23a;
+      color: #111;
+      font-weight: 800;
+      font-size: 16px;
+      letter-spacing: 1px;
+      cursor: pointer;
+    }
+
+    .send-button:hover {
+      background: #111;
+      color: #c9a23a;
+    }
+
+    .contact-info {
+      margin-top: 70px;
+      padding-top: 40px;
+      border-top: 1px solid #9b7a2f;
+    }
+
+    .contact-info h2 {
+      margin-bottom: 15px;
+    }
+
+    .contact-info p {
+      line-height: 1.7;
+    }
+
+    .return-home {
+      display: inline-block;
+      margin-top: 45px;
+      padding: 18px 40px;
+      border: 2px solid #111;
+      color: #111;
+      text-decoration: none;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    .return-home:hover {
+      background: #111;
+      color: #fff;
+    }
+
+    @media (max-width: 600px) {
+      .contact-page {
+        padding: 60px 20px 80px;
+      }
+
+      .contact-intro {
+        font-size: 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="site-header">
+    <a class="brand" href="index.html">
+      <img src="american-federation-logo.png"
+           alt="American Federation"
+           class="brand-logo">
+      <span>AMERICAN FEDERATION</span>
+    </a>
+
+    <button class="menu-toggle" aria-label="Open menu">
+      ☰
+    </button>
+  </header>
+
+  <main>
+
+    <section class="contact-page">
+
+      <div class="contact-label">
+        American Federation
+      </div>
+
+      <h1>Contact</h1>
+
+      <p class="contact-intro">
+        Have a question, want to learn more about the Federation,
+        or interested in getting involved? Send us a message.
+      </p>
+
+      <form
+        class="contact-form"
+        action="mailto:americanfederation1@gmail.com"
+        method="post"
+        enctype="text/plain">
+
+        <label for="name">Name</label>
+        <input
+          type="text"
+          id="name"
+          name="Name"
+          placeholder="Your name"
+          required>
+
+        <label for="email">Email</label>
+        <input
+          type="email"
+          id="email"
+          name="Email"
+          placeholder="Your email address"
+          required>
+
+        <label for="subject">Subject</label>
+        <input
+          type="text"
+          id="subject"
+          name="Subject"
+          placeholder="What is your message about?"
+          required>
+
+        <label for="message">Message</label>
+        <textarea
+          id="message"
+          name="Message"
+          placeholder="Write your message here..."
+          required></textarea>
+
+        <button type="submit" class="send-button">
+          SEND MESSAGE
+        </button>
+
+      </form>
+
+      <div class="contact-info">
+
+        <h2>American Federation</h2>
+
+        <p>
+          A brotherhood. A network. A movement.
+          Stronger together. Building for generations.
+        </p>
+
+        <p>
+          We welcome questions, membership inquiries,
+          partnership opportunities, and community connections.
+        </p>
+
+      </div>
+
+      <a href="index.html" class="return-home">
+        RETURN HOME
+      </a>
+
+    </section>
+
+  </main>
+
+</body>
+</html>
