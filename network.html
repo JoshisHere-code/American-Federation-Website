@@ -1,275 +1,634 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 
-  <title>Federation Network | American Federation</title>
+<meta name="description" content="The American Federation Network connects members, businesses, nonprofits, and affiliated organizations.">
 
-  <link rel="stylesheet" href="styles.css">
+<title>Federation Network | American Federation</title>
 
-  <style>
-    .network-page {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 70px 25px 100px;
-      text-align: center;
-    }
+<link rel="stylesheet" href="styles.css">
 
-    .network-label {
-      color: #d4af37;
-      font-weight: 700;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      margin-bottom: 20px;
-    }
+<style>
 
-    .network-page h1 {
-      font-size: clamp(48px, 9vw, 100px);
-      line-height: 0.95;
-      margin: 0 0 35px;
-    }
+/* =========================================
+   AMERICAN FEDERATION NETWORK PAGE
+   ========================================= */
 
-    .network-intro {
-      max-width: 750px;
-      margin: 0 auto 60px;
-      font-size: 22px;
-      line-height: 1.7;
-      color: #cfcfcf;
-    }
+.network-page {
+  min-height: 100vh;
+  background: #0d0e0d;
+  color: #f7f5ef;
+}
 
-    .network-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 25px;
-      text-align: left;
-    }
+.network-hero {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 78px 22px 45px;
+}
 
-    .network-card {
-      border: 1px solid #b28b2e;
-      padding: 35px 28px;
-      background: #0d0d0d;
-    }
+.network-hero .eyebrow {
+  color: #e0b65a;
+}
 
-    .network-card h2 {
-      margin-top: 0;
-      color: #f5f5f5;
-      font-size: 25px;
-    }
+.network-hero h1 {
+  margin: 0;
+  max-width: 850px;
+  font-family: Cinzel, Georgia, serif;
+  font-size: clamp(3rem, 8vw, 6.5rem);
+  line-height: .95;
+  letter-spacing: .01em;
+}
 
-    .network-card p {
-      color: #c8c8c8;
-      line-height: 1.7;
-    }
+.network-hero h1 span {
+  color: #e0b65a;
+}
 
-    .network-section {
-      margin-top: 80px;
-      text-align: left;
-    }
+.network-intro {
+  max-width: 760px;
+  margin: 28px 0 0;
+  color: #b7b4ab;
+  font-size: 1.05rem;
+}
 
-    .network-section h2 {
-      font-size: 36px;
-      margin-bottom: 20px;
-    }
+.network-section {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 45px 22px 85px;
+}
 
-    .network-section p {
-      color: #c8c8c8;
-      font-size: 18px;
-      line-height: 1.8;
-    }
+.network-section h2 {
+  font-family: Cinzel, Georgia, serif;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  margin: 0 0 12px;
+}
 
-    .business-box {
-      border-left: 3px solid #d4af37;
-      padding: 25px 30px;
-      margin-top: 30px;
-      background: #111;
-    }
+.network-section-lede {
+  max-width: 760px;
+  color: #b7b4ab;
+  margin: 0 0 32px;
+}
 
-    .business-box h3 {
-      color: #d4af37;
-      margin-top: 0;
-    }
+.network-business-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
 
-    .network-button {
-      display: inline-block;
-      margin-top: 55px;
-      padding: 20px 45px;
-      background: #d4af37;
-      color: #111;
-      text-decoration: none;
-      font-weight: 800;
-      letter-spacing: 1px;
-    }
+.network-business-card {
+  background: #151614;
+  border: 1px solid rgba(199,154,59,.35);
+  min-height: 330px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: .2s ease;
+}
 
-    .network-button:hover {
-      opacity: 0.9;
-    }
+.network-business-card:hover {
+  transform: translateY(-3px);
+  border-color: #e0b65a;
+}
 
-    @media (max-width: 750px) {
-      .network-grid {
-        grid-template-columns: 1fr;
-      }
+.network-logo-link {
+  display: grid;
+  place-items: center;
+  min-height: 170px;
+  border: 1px solid rgba(255,255,255,.07);
+  background: #0d0e0d;
+  padding: 22px;
+  text-decoration: none;
+}
 
-      .network-intro {
-        font-size: 18px;
-      }
+.network-logo-link img {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+}
 
-      .network-section h2 {
-        font-size: 30px;
-      }
-    }
-  </style>
+.network-text-logo {
+  color: #e0b65a;
+  font-family: Cinzel, Georgia, serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: .04em;
+}
+
+.network-business-card h3 {
+  font-family: Cinzel, Georgia, serif;
+  font-size: 1.35rem;
+  margin: 22px 0 4px;
+}
+
+.network-type {
+  color: #e0b65a;
+  font-size: .7rem;
+  font-weight: 800;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+  margin: 0 0 12px;
+}
+
+.network-business-card p {
+  color: #b7b4ab;
+  font-size: .88rem;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.network-note {
+  margin-top: 42px;
+  padding: 25px;
+  border-left: 2px solid #c79a3b;
+  background: #11120f;
+  color: #b7b4ab;
+}
+
+.network-note strong {
+  color: #f7f5ef;
+}
+
+.network-bottom {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 22px 80px;
+  text-align: center;
+}
+
+.network-bottom p {
+  color: #b7b4ab;
+  max-width: 700px;
+  margin: 0 auto 25px;
+}
+
+.network-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* =========================================
+   MOBILE NETWORK LAYOUT
+   ========================================= */
+
+@media (max-width: 800px) {
+
+  .network-business-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  .network-hero {
+    padding: 58px 20px 35px;
+  }
+
+  .network-section {
+    padding: 35px 20px 65px;
+  }
+
+  .network-business-card {
+    min-height: 0;
+  }
+
+  .network-logo-link {
+    min-height: 180px;
+  }
+
+  .network-bottom {
+    padding: 0 20px 65px;
+  }
+
+}
+
+/* =========================================
+   MOBILE MENU FOR THIS PAGE
+   ========================================= */
+
+@media (max-width: 900px) {
+
+  .nav.menu-open {
+    display: flex !important;
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    background: #090a09 !important;
+    padding: 18px 5vw !important;
+    z-index: 9999 !important;
+  }
+
+  .nav.menu-open a {
+    padding: 10px 0;
+  }
+
+  .nav.menu-open .nav-cta {
+    text-align: center;
+  }
+
+</style>
+
 </head>
 
 <body>
 
-  <header class="site-header">
-    <a class="brand" href="index.html">
-      <img src="american-federation-logo.png"
-           alt="American Federation Logo">
-      <span>AMERICAN FEDERATION</span>
+<header class="site-header">
+
+  <a class="brand" href="index.html" aria-label="American Federation home">
+
+    <img
+      src="american-federation-logo.png"
+      alt="American Federation emblem">
+
+    <span>AMERICAN FEDERATION</span>
+
+  </a>
+
+
+  <button
+    class="menu-toggle"
+    aria-label="Open menu"
+    aria-expanded="false">
+
+    ☰
+
+  </button>
+
+
+  <nav class="nav" aria-label="Main navigation">
+
+    <a href="index.html">Home</a>
+
+    <a href="about.html">About</a>
+
+    <a href="programs.html">Programs &amp; Services</a>
+
+    <a href="membership.html">Membership</a>
+
+    <a href="network.html" aria-current="page">Network</a>
+
+    <a href="index.html#publications">Publications</a>
+
+    <a href="music.html">Thomas Music Group</a>
+
+    <a href="music.html">Music</a>
+
+    <a href="contact.html">Contact</a>
+
+    <a class="nav-cta" href="membership.html">
+      Join the Federation
     </a>
 
-    <button class="menu-toggle" aria-label="Open menu">
-      ☰
-    </button>
-  </header>
+  </nav>
+
+</header>
 
 
-  <main class="network-page">
-
-    <div class="network-label">
-      The Federation Network
-    </div>
-
-    <h1>
-      CONNECTED<br>
-      MEMBERS.<br>
-      <span style="color:#d4af37;">STRONGER<br>TOGETHER.</span>
-    </h1>
-
-    <p class="network-intro">
-      The American Federation Network is designed to connect
-      members, businesses, organizations, and communities
-      around shared values, skills, services, and opportunities.
-    </p>
+<main class="network-page">
 
 
-    <section class="network-grid">
+<!-- =========================================
+     NETWORK HERO
+     ========================================= -->
 
-      <article class="network-card">
-        <h2>Individuals</h2>
+<section class="network-hero">
 
-        <p>
-          Members can connect with other members, share their
-          skills, develop relationships, discover opportunities,
-          and contribute to the growth of the Federation community.
+  <p class="eyebrow">
+    THE FEDERATION NETWORK
+  </p>
+
+  <h1>
+    CONNECTED MEMBERS.<br>
+    <span>STRONGER TOGETHER.</span>
+  </h1>
+
+  <p class="network-intro">
+
+    The American Federation Network is designed to connect
+    members, businesses, nonprofits, and organizations around
+    shared values, skills, services, and opportunities.
+
+  </p>
+
+</section>
+
+
+<!-- =========================================
+     MEMBER BUSINESSES & ORGANIZATIONS
+     ========================================= -->
+
+<section class="network-section">
+
+  <p class="eyebrow">
+    MEMBER BUSINESSES &amp; ORGANIZATIONS
+  </p>
+
+  <h2>
+    Building the Network.
+  </h2>
+
+  <p class="network-section-lede">
+
+    The network will grow alongside the Federation. Each
+    participating entity remains independently operated while
+    contributing to a stronger community of members and
+    organizations.
+
+  </p>
+
+
+  <div class="network-business-grid">
+
+
+    <!-- =====================================
+         THOMAS MUSIC GROUP
+         ===================================== -->
+
+    <article class="network-business-card">
+
+      <a
+        class="network-logo-link"
+        href="index.html"
+        aria-label="Return to American Federation home">
+
+        <div class="network-text-logo">
+
+          THOMAS<br>
+          MUSIC GROUP<br>
+
+          <small>LLC</small>
+
+        </div>
+
+      </a>
+
+
+      <div>
+
+        <h3>
+          Thomas Music Group LLC
+        </h3>
+
+        <p class="network-type">
+          Record Label / Music Business
         </p>
-      </article>
-
-
-      <article class="network-card">
-        <h2>Businesses</h2>
 
         <p>
-          Member-owned businesses can become part of a growing
-          network where members can discover businesses,
-          services, products, and professional opportunities.
-        </p>
-      </article>
 
+          The record-label and business entity associated
+          with Federation founder Joshua Thomas. The artist
+          represented through the label is JoshisHere.
 
-      <article class="network-card">
-        <h2>Organizations</h2>
-
-        <p>
-          Organizations and community groups may connect with
-          the Federation as the network develops and opportunities
-          for collaboration become available.
-        </p>
-      </article>
-
-    </section>
-
-
-    <section class="network-section">
-
-      <h2>How the Network Works</h2>
-
-      <p>
-        The Federation Network is built around relationships.
-        Members remain independently owned and operated while
-        participating in a community designed to encourage
-        cooperation, professionalism, personal development,
-        and mutual support.
-      </p>
-
-      <p>
-        As the Federation grows, the network can develop into
-        a place where members discover businesses, services,
-        educational opportunities, community programs, and
-        other resources.
-      </p>
-
-    </section>
-
-
-    <section class="network-section">
-
-      <h2>Member Businesses</h2>
-
-      <p>
-        The Federation recognizes that many members have their
-        own businesses, organizations, creative projects, and
-        professional services.
-      </p>
-
-
-      <div class="business-box">
-
-        <h3>Thomas Music Group</h3>
-
-        <p>
-          Thomas Music Group is the record-label/business entity
-          associated with Federation founder Joshua Thomas.
-          The artist represented through the label is
-          <strong>JoshisHere</strong>.
         </p>
 
       </div>
 
-    </section>
+    </article>
 
 
-    <section class="network-section">
+    <!-- =====================================
+         KNIGHTS OF SAINT THOMAS
+         ===================================== -->
 
-      <h2>Building the Network</h2>
+    <article class="network-business-card">
+
+      <a
+        class="network-logo-link"
+        href="index.html"
+        aria-label="Return to American Federation home">
+
+        <img
+          src="knights-of-saint-thomas.png"
+          alt="Knights of Saint Thomas logo">
+
+      </a>
+
+
+      <div>
+
+        <h3>
+          Knights of Saint Thomas
+        </h3>
+
+        <p class="network-type">
+          Nonprofit Organization
+        </p>
+
+        <p>
+
+          A nonprofit organization participating in the
+          broader American Federation network.
+
+        </p>
+
+      </div>
+
+    </article>
+
+
+    <!-- =====================================
+         AMERICAN FEDERATION EMPIRE
+         ===================================== -->
+
+    <article class="network-business-card">
+
+      <a
+        class="network-logo-link"
+        href="index.html"
+        aria-label="Return to American Federation home">
+
+        <div class="network-text-logo">
+
+          AMERICAN<br>
+          FEDERATION<br>
+          EMPIRE
+
+        </div>
+
+      </a>
+
+
+      <div>
+
+        <h3>
+          American Federation Empire
+        </h3>
+
+        <p class="network-type">
+          Federation Entity
+        </p>
+
+        <p>
+
+          An affiliated entity within the broader
+          American Federation network.
+
+        </p>
+
+      </div>
+
+    </article>
+
+
+  </div>
+
+
+  <div class="network-note">
+
+    <strong>
+      Growing the Network
+    </strong>
+
+    <br>
+
+    As the Federation grows, additional member businesses,
+    nonprofits, organizations, services, events, and
+    opportunities can be added here.
+
+  </div>
+
+</section>
+
+
+<!-- =========================================
+     JOIN / RETURN HOME
+     ========================================= -->
+
+<section class="network-bottom">
+
+  <p>
+
+    Interested in becoming part of the American Federation
+    community? Membership opportunities are available for
+    individuals, groups, and businesses.
+
+  </p>
+
+
+  <div class="network-buttons">
+
+    <a
+      class="button button-gold"
+      href="membership.html">
+
+      Join the Federation
+
+    </a>
+
+
+    <a
+      class="button button-outline"
+      href="index.html">
+
+      Return Home
+
+    </a>
+
+  </div>
+
+</section>
+
+
+</main>
+
+
+<!-- =========================================
+     FOOTER
+     ========================================= -->
+
+<footer class="footer">
+
+  <div class="footer-top">
+
+
+    <div class="footer-brand">
+
+      <img
+        src="american-federation-logo.png"
+        alt="">
+
+      <strong>
+        AMERICAN FEDERATION
+      </strong>
 
       <p>
-        This directory will grow as the Federation grows.
-        Future features may include member profiles,
-        business listings, categories, services, networking
-        opportunities, events, and member-to-member resources.
+        A brotherhood. A network. A movement.
       </p>
 
-    </section>
+    </div>
 
 
-    <a class="network-button" href="membership.html">
-      JOIN THE FEDERATION
-    </a>
+    <div>
 
-    <br><br>
+      <h4>
+        QUICK LINKS
+      </h4>
 
-    <a class="network-button"
-       href="index.html"
-       style="background:transparent;color:#f5f5f5;border:1px solid #777;">
-      RETURN HOME
-    </a>
+      <a href="index.html">
+        Home
+      </a>
 
-  </main>
+      <a href="membership.html">
+        Membership
+      </a>
+
+      <a href="network.html">
+        Network
+      </a>
+
+      <a href="music.html">
+        Thomas Music Group
+      </a>
+
+    </div>
+
+
+    <div>
+
+      <h4>
+        GET INVOLVED
+      </h4>
+
+      <a href="membership.html">
+        Apply for Membership
+      </a>
+
+      <a href="contact.html">
+        Contact
+      </a>
+
+    </div>
+
+
+  </div>
+
+
+  <p class="copyright">
+
+    © <span id="year"></span>
+    American Federation. All rights reserved.
+
+  </p>
+
+</footer>
+
 
 <script src="script.js"></script>
-  
+
+<script>
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+</script>
+
+
 </body>
 </html>
