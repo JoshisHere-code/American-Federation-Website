@@ -41,5 +41,28 @@ footer{padding:24px 22px;border-top:1px solid var(--border);text-align:center;co
 <a class="back" href="index.html">← Return to American Federation</a>
 </main>
 <footer>American Federation</footer>
+<script type="module">
+  import { createClient }
+    from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
+
+  const SUPABASE_URL =
+    "https://iauyrxtpbjriyeicnjpg.supabase.co";
+
+  const SUPABASE_PUBLISHABLE_KEY =
+    "sb_publishable_GyKSN6klqCjQQOB4g3Un9g_URqbXc8g";
+
+  const supabase = createClient(
+    SUPABASE_URL,
+    SUPABASE_PUBLISHABLE_KEY
+  );
+
+  const { data: { session } } =
+    await supabase.auth.getSession();
+
+  if (!session) {
+    window.location.href = "login.html";
+  }
+</script>
+
 </body>
 </html>
